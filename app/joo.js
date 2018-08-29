@@ -2,13 +2,22 @@ import { detect } from './detect-browser.js';
 import { operator, ruleMapper, versionNumber } from './utilities.js';
 
 function JOO() {
-	const browserInfo = detect();
+	let browserInfo = detect();
 
 	return {
 
 		name: 'joo',
 
 		version: '0.0.1',
+
+		init: function(userAgentString){
+
+			if (typeof userAgentString === 'string') {
+				browserInfo = detect(userAgentString);
+			}
+
+			return this;
+		},
 
 		get: function () {
 			return browserInfo;
@@ -19,7 +28,7 @@ function JOO() {
 
 			rules.forEach(rule => {
 				const condition = ruleMapper(rule);
-				
+
 				console.log('condition', condition);
 				if (
 					condition.name === browserInfo.name &&

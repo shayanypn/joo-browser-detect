@@ -1,6 +1,6 @@
 
-# Joo (browser support)
-This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happend
+# Joo (browser detect)
+This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens
 
 
 ## Example Usage

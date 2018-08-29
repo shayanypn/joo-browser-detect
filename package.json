@@ -1,7 +1,7 @@
 {
-  "name": "joo-browser-support",
+  "name": "joo-browser-detect",
   "version": "0.0.1",
-  "description": "This is a package that attempts to detect a browser vendor and version (in a semver compatible format) using a navigator useragent in a browser or process.version in node.",
+  "description": "This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens",
   "main": "dist/joo.js",
   "scripts": {
     "build": "webpack --env build",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shayanypn/joo-browser-support"
+    "url": "https://github.com/shayanypn/joo-browser-detect"
   },
   "keywords": [
     "browser",

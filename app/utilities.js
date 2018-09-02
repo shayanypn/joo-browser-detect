@@ -28,43 +28,21 @@ function filter(ary, fun) {
   return res;
 }
 
-
-function operator(paramA, paramB, operation){
+function operator(firstParam, secondParam, operation) {
   let result;
-  switch(operation){
-    case '&&':
-      result = (paramA && paramB);
-      break;
-    case '||':
-      result = (paramA || paramB);
-      break;
-    case '==':
-      result = (paramA === paramB);
-      break;
-    case '===':
-      result = (paramA === paramB);
-      break;
-    case '!=':
-      result = (paramA !== paramB);
-      break;
-    case '>':
-      result = (paramA > paramB);
-      break;
-    case '>=':
-      result = (paramA >= paramB);
-      break;
-    case '<':
-      result = (paramA < paramB);
-      break;
-    case '<=':
-      result = (paramA <= paramB);
-      break;
-    default:
-      result = paramA ? true : false;
-      break;
-  }
 
-  console.log(paramA, paramB, operation, result);
+  switch (operation) {
+    case '&&': result = (firstParam && secondParam); break;
+    case '||': result = (firstParam || secondParam); break;
+    case '==': result = (firstParam === secondParam); break;
+    case '===': result = (firstParam === secondParam); break;
+    case '!=': result = (firstParam !== secondParam); break;
+    case '>': result = (firstParam > secondParam); break;
+    case '>=': result = (firstParam >= secondParam); break;
+    case '<': result = (firstParam < secondParam); break;
+    case '<=': result = (firstParam <= secondParam); break;
+    default: result = firstParam ; break;
+  }
   return result;
 }
 
@@ -77,20 +55,22 @@ function buildRules(ruleTuples) {
   });
 }
 
-function ruleMapper(rule){
+function versionNumber(version) {
+  const num = [];
+
+  num.push(version[0]);
+  num.push(version.slice(1, version.length).join(''));
+  return parseFloat(num.join('.'));
+}
+
+function ruleMapper(rule) {
   const ruleAry = rule.trim().replace(/\s+/g, ' ').split(' ');
+
   return {
     name: ruleAry[0],
     operation: ruleAry[1],
     version: versionNumber(ruleAry[2].split('.'))
   };
-}
-
-function versionNumber(version){
-  const num = [];
-  num.push(version[0]);
-  num.push(version.slice(1, version.length).join(''));
-  return parseFloat(num.join('.'));
 }
 
 module.exports = {

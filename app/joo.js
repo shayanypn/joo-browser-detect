@@ -1,5 +1,5 @@
-import { detect } from './detect-browser.js';
-import { operator, ruleMapper, versionNumber } from './utilities.js';
+import detect from './detect-browser.js';
+import { operator, ruleMapper } from './utilities.js';
 
 function JOO() {
 	let browserInfo = detect();
@@ -10,7 +10,7 @@ function JOO() {
 
 		version: '0.0.1',
 
-		init: function(userAgentString){
+		init: function (userAgentString) {
 
 			if (typeof userAgentString === 'string') {
 				browserInfo = detect(userAgentString);
@@ -29,34 +29,33 @@ function JOO() {
 			rules.forEach(rule => {
 				const condition = ruleMapper(rule);
 
-				console.log('condition', condition);
 				if (
-					condition.name === browserInfo.name &&
-					!operator(browserInfo.version, condition.version, condition.operation)
+					condition.name.trim().toLowerCase() === browserInfo.name.trim().toLowerCase() &&
+					!operator(browserInfo.version, condition.version, condition.operation.trim())
 					) {
 					valid = false;
 				}
-				console.log(condition);
 			});
 
 			if (typeof callback === 'function') {
 				callback(valid);
 			}
+
+			return valid;
 		},
 
 		error: function (callback) {
-			const self = this;
 			window.onerror = function (msg, url, lineNo, columnNo, error) {
 				const errorInfo = {
 					Message: msg,
 					URL: url,
 					Line: lineNo,
-					Column:  columnNo,
+					Column: columnNo,
 					Errorobject: JSON.stringify(error),
-					Browser: self.get()
+					Browser: browserInfo
 				};
 
-				if ( typeof callback === 'function') {
+				if (typeof callback === 'function') {
 					callback(errorInfo);
 				}
 
@@ -64,15 +63,20 @@ function JOO() {
 			};
 		},
 
-		isOrError: function(rules, callback){
-			this.is(rules, callback);
-			this.error(callback);
+		isOrError: function (rules, callback) {
+			const isBrowser = this.is(rules, callback);
+
+			this.error(error => {
+				if (typeof callback === 'function') {
+					callback(isBrowser, error);
+				}
+			});
 		}
 	};
 }
 
-
 const myWindow = (typeof window !== 'undefined') ? window : {};
+
 myWindow.joo = new JOO();
 module.exports = myWindow.joo;
 module.exports.default = myWindow.joo;

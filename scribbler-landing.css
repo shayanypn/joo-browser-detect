@@ -23,6 +23,7 @@ nav {
 
 .hero__description {
   margin: -1rem auto 2rem auto;
+  max-width: 500px;
 }
 
 .hero__terminal {
@@ -78,7 +79,7 @@ nav {
 }
 
 .keybinding__detail:first-child {
-  text-align: right;
+  /*text-align: right;*/
   padding-right: 1rem;
 }
 
@@ -177,4 +178,41 @@ nav {
   .keybinding {
     font-size: 0.8rem;
   }
+}
+.samples{
+  background: #f8f8fa;
+  border-radius: 4px;
+  border:1px solid #e8e8ea;
+  padding: 15px;
+}
+.samples h2{
+  text-align: center;
+  margin: 0px;
+}
+.samples hr{
+  border-bottom: 2px solid #dedede;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+.sample__title{
+  margin: 0px;
+}
+.sample__box{
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.sample__slide{
+  width: 50%;
+  padding: 0 5px ;
+}
+
+.samples code{min-height: 180px;}
+
+pre{
+  border-radius: 4px;
+}
+code{
+  border-radius: 4px;
+  line-height: 1rem;
 }

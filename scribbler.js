@@ -12,15 +12,20 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `scribbler
-            [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
-
-            ###todo for new year dinner party
-
-            - milk
-            - butter
-            - green onion
-            - lots and lots of kiwis 🥝`;
+  var txt = `// how joo work
+            const joo = require('joo');
+            joo.get();
+            {
+               "bot": false,
+               "mobile": false,
+               "name": "chrome",
+               "version": "68.0.3440",
+               "versionNumber": 68.0344,
+               "os": "Windows 10"
+            }
+            // or
+            joo.is('chrome > 70.0',is=>console.log(is?'valid':'not valid'););
+            `;
   var speed = 60;
 
   function typeItOut () {

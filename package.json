@@ -9,7 +9,7 @@
     "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
     "predeploy": "webpack --optimize-minimize",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d deploy"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",

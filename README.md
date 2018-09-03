@@ -1,4 +1,5 @@
 
+
 # Joo (browser detect)
 This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens
 
@@ -19,6 +20,29 @@ out put will be
        "versionNumber": 68.0344,
        "os": "Windows 10"
     }
+
+## Detect Object
+| name | type | description | example |
+| ---- | ---- | ----------- | ------- |
+| name | string | a browser name | ie, chrome, firefox |
+| version | string | browser or node version | 59.2.22 |
+| versionNumber | number | browser or node number casted to number | 59.222 |
+| mobile | boolean | if browser is in mobile environment or not | true |
+| bot| boolean | if requester is Bot or not | true |
+| os | string | os type name | Windows NT 10.0 |
+
+
+
+## Method
+| name | entry | description | output |
+| ---- | ---- | ----------- | ------- |
+| init | string |  |  |
+| get |  | return current browser detect object |  |
+| version | string | browser or node version |  |
+| versionNumber |  |  |  |
+| mobile |  |  |  |
+| bot|  |  |  |
+| os |  |  |  |
 
 ## LICENSE
 

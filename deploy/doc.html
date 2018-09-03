@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Scribbler Documentation - a code documentation page template for codrops</title>
+    <title>Joo Documentation - Browser Detect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="scribbler-global.css">
@@ -14,81 +14,229 @@
   <body>
     <div class="doc__bg"></div>
     <nav class="header">
-      <h1 class="logo">Scribbler <span class="logo__thin">Doc</span></h1>
+      <h1 class="logo">Joo <span class="logo__thin">Doc</span></h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
-        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item"><a href="./doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
+        <li class="menu__item"><a href="https://github.com/shayanypn/joo-browser-detect" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
     <div class="wrapper">
       <aside class="doc__nav">
         <ul>
           <li class="js-btn selected">Get Started</li>
-          <li class="js-btn">Configuration</li>
-          <li class="js-btn">Keybindings</li>
+          <li class="js-btn">Property</li>
+          <li class="js-btn">Methods</li>
           <li class="js-btn">Issues</li>
         </ul>
       </aside>
       <article class="doc__content">
         <section class="js-section">
           <h3 class="section__title">Get Started</h3>
-          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, magni, eaque. Veniam, tempora qui, nihil magnam cupiditate cum veritatis non repellendus, doloremque aut ullam magni! Aliquam consectetur, non temporibus mollitia!</p>
           <h3 class="section__title">Installation</h3>
           <div class="code__block code__block--notabs">
+            <strong>NPM</strong>
             <pre class="code code--block">
               <code>
-                $ scribbler  ——config
-                  {
-                    “encryption”: true, 
-                    “highlighting“: true,
-                    “prettyTable”: false,
-                    “font”: [“Helvetica”, “sans-serif”],
-                    “folder”: “~/Desktop“
-                  }
+                npm install joo-browser-detect --save
               </code>
             </pre>
+          
+            <strong>BOWER</strong>
+            <pre class="code code--block">
+              <code>
+                bower install joo-browser-detect
+              </code>
+            </pre>
+
           </div>
         </section>
         <section class="js-section">
-          <h3 class="section__title">Configuration</h3>
-          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
-          <table id="customers">
+          <h3 class="section__title">Property</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste repellat accusamus minima rerum quasi atque, quod iure sint vel laboriosam officiis, aliquid saepe dicta qui id veniam quidem eos, molestiae.</p>
+          <strong>DetectObject</strong>
+          <table id="detect-bbject">
             <tr>
-              <th>Options</th>
-              <th>Value</th>
-              <th>Default</th>
+              <th>Property</th>
+              <th>Description</th>
+              <th>Sample</th>
             </tr>
             <tr>
-              <td>encryption</td>
-              <td>encrypt all notes before saving. If turned on, it requires password to open the file.</td>
+              <td>bot</td>
+              <td></td>
+              <td>False</td>
+            </tr>
+            <tr>
+              <td>mobile</td>
+              <td></td>
               <td>false</td>
             </tr>
             <tr>
-              <td>highlighting</td>
-              <td>Show syntax highlight on markdown text.</td>
-              <td>true</td>
+              <td>name</td>
+              <td></td>
+              <td>firefox,chrome,ie</td>
             </tr>
             <tr>
-              <td>prettyTable</td>
-              <td>Render table with Scribbler’s pretty table style.</td>
-              <td>true</td>
+              <td>version</td>
+              <td></td>
+              <td>50.0.0034, 1100</td>
+            </tr>
+            <tr>
+              <td>versionNumber</td>
+              <td></td>
+              <td>50.0.0034, 11.00</td>
+            </tr>
+            <tr>
+              <td>os</td>
+              <td></td>
+              <td>Mac, Windows</td>
             </tr>
           </table>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+
+          <strong>ErrorObject</strong>
+          <table id="error-bbject">
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+              <th>Sample</th>
+            </tr>
+            <tr>
+              <td>browser</td>
+              <td>browser DetectObject</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>line</td>
+              <td>line of line which error happend</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>column</td>
+              <td>column of file which error happend</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>errorobject</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>url</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>message</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+
           <hr />
         </section>
         <section class="js-section">
-          <h3 class="section__title">Keybindings</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <h3 class="section__title">Methods</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio reiciendis, officiis quae. Magni officia, eius dolorem veritatis eum non nulla, atque animi sit amet, error incidunt, rerum ullam enim! Soluta.</p>
+          <table id="customers">
+            <tr>
+              <th>Options</th>
+              <th>Entry</th>
+              <th>Output</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td> -- </td>
+              <td>string</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>version</td>
+              <td> -- </td>
+              <td>string</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>init</td>
+              <td> string </td>
+              <td> this</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>get</td>
+              <td> -- </td>
+              <td>DetectObject</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>is</td>
+              <td>String|Array, Function</td>
+              <td>--</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>error</td>
+              <td>Function</td>
+              <td>--</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>isOrError</td>
+              <td>String|Array, Function</td>
+              <td>--</td>
+              <td></td>
+            </tr>
+          </table>
+
+          <strong>Examples</strong>
+          <p>Get browser information</p>
+          <pre class="code code--block">
+            <code>
+              const Joo = require('joo');
+              console.log(Joo.get());
+
+              //output
+              {
+                   "bot": false,
+                   "mobile": false,
+                   "name": "chrome",
+                   "version": "68.0.3440",
+                   "versionNumber": 68.0344,
+                   "os": "Windows 10"
+              }
+            </code>
+          </pre>
+          
+          <p>Check browser </p>
+          <pre class="code code--block">
+            <code>
+              const Joo = require('joo');
+              Joo.is([
+                'chrome > 70.0.3440',
+                'firefox > 32',
+                'ie > 10'
+                ], is => {
+                  console.log( is ? 'Valid' : 'No Valid');
+              });
+            </code>
+          </pre>
+
+          <p>Watch When any error happend</p>
+          <pre class="code code--block">
+            <code>
+              const Joo = require('joo');
+              Joo.error( error => {
+                console.log(error);
+              });
+            </code>
+          </pre>
+
           <hr />
         </section>
         <section class="js-section">
           <h3 class="section__title">Issues</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere iusto atque, reprehenderit dolorem accusantium qui! Laborum ipsa ut molestiae, doloremque tempora reprehenderit voluptates? Quaerat eos iusto id, facilis possimus sit.</p>
         </section>
       </article>
     </div>

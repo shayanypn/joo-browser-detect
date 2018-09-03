@@ -27,17 +27,16 @@
 document.getElementById('log').innerHTML = JSON.stringify(joo.get(), null, 3);
 
 joo.is([
-	' chrome  >  70.0.3440 ',
-	' chrome == 60.0.0000 '
-	], function(is_browser) {
-	console.log( is_browser ? 'browser is what we expect' : 'browser not provide our requirement');
+	'chrome  >  70.0.3440',
+	], is => {
+	console.log( is ? 'Valid' : 'No Valid');
 });
 
 joo.isOrError([
 	' chrome  >  70.0.3440 ',
 	' chrome == 60.0.0000 '
-	], function(is_browser, error) {
-	console.log(is_browser, error);
+	], function(is, error) {
+	console.log(is, error);
 });
 
 setTimeout(function(){

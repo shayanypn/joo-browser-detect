@@ -1,5 +1,5 @@
 import detect from './detect-browser.js';
-import { operator, ruleMapper } from './utilities.js';
+import { operator, ruleMapper, isArray } from './utilities.js';
 
 function JOO() {
 	let browserInfo = detect();
@@ -26,6 +26,14 @@ function JOO() {
 		is: function (rules, callback) {
 			let valid = true;
 
+			if (typeof rules === 'string') {
+				rules = rules.split(',');
+			}
+
+			if (!isArray(rules)) {
+				console.warn('Rules is not valid');
+			}
+
 			rules.forEach(rule => {
 				const condition = ruleMapper(rule);
 
@@ -45,22 +53,27 @@ function JOO() {
 		},
 
 		error: function (callback) {
-			window.onerror = function (msg, url, lineNo, columnNo, error) {
-				const errorInfo = {
-					Message: msg,
-					URL: url,
-					Line: lineNo,
-					Column: columnNo,
-					Errorobject: JSON.stringify(error),
-					Browser: browserInfo
+
+			if (typeof window !== undefined) {
+				window.onerror = function (msg, url, lineNo, columnNo, error) {
+					const errorInfo = {
+						message: msg,
+						url: url,
+						line: lineNo,
+						column: columnNo,
+						errorobject: JSON.stringify(error),
+						browser: browserInfo
+					};
+
+					if (typeof callback === 'function') {
+						callback(errorInfo);
+					}
+
+					return false;
 				};
-
-				if (typeof callback === 'function') {
-					callback(errorInfo);
-				}
-
-				return false;
-			};
+			} else {
+				console.warn('window not recognized.');
+			}
 		},
 
 		isOrError: function (rules, callback) {

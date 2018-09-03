@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Scribbler - a codding landing page template for codrops</title>
+      <title>Joo - Browser Detect</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
@@ -17,18 +17,18 @@
       <div class="logo"></div>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
-        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="joo-browser-detect/doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
+        <li class="menu__item"><a href="https://github.com/shayanypn/joo-browser-detect" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
       </ul>
     </nav>
     <div class="hero">
-      <h1 class="hero__title">Scribbler</h1>
-      <p class="hero__description">Take your markdown notes in terminal</p>
+      <h1 class="hero__title">Joo</h1>
+      <p class="hero__description">This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens</p>
     </div>
     <div class="hero__terminal">
       <pre>
         <!-- Place your demo code here -->
-        <code class="shell-session demo">hyperyolo ~ $ </code>
+        <code class="shell-session demo">shayanypn ~ $ </code>
       </pre>
     </div>
     <div class="wrapper">
@@ -36,14 +36,37 @@
         <h3 class="section__title">Installation</h3>
         <div class="tab__container">
           <ul class="tab__menu">
-            <li class="tab active" data-tab="mac">mac</li>
-            <li class="tab" data-tab="linux">linux</li>
-            <li class="tab" data-tab="win">win</li>
+            <li class="tab active" data-tab="npm">npm</li>
           </ul>
           <pre class="nohighlight code">
-            <code class="tab__pane active mac">$  brew install scribbler</code>
-            <code class="tab__pane linux">$  apt-get install scribbler</code>
-            <code class="tab__pane win">$  gem install scribbler</code>
+            <code class="tab__pane active npm">$  npm install joo-browser-detect --save</code>
+          </pre>
+        </div>
+        <br />
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="bower">bower</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active bower">$  bower install joo-browser-detect</code>
+          </pre>
+        </div>
+        <br />
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="yarn">yarn</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active yarn">$  yarn install joo-browser-detect</code>
+          </pre>
+        </div>
+        <br />
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="external">external</li>
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active external">$  brew install scribbler</code>
           </pre>
         </div>
       </div>
@@ -73,21 +96,79 @@
           <p>You can expect common keybindings for scribbler. Customize <span class="code code--inline">bindings.json</span> for your own liking! </p>
         </div>
       </div>
-      <div class="keybinding">
-        <ul class="keybinding__detail">
-          <h3 class="keybinding__title">Default Keybindings</h3>
-          <li>Quit without saving <span class="keybinding__label">Ctrl+C</span></li>
-          <li>Save <span class="keybinding__label">Cmd+S</span></li>
-          <li>Save and Quit <span class="keybinding__label">Ctrl+D</span></li>
-          <li>Undo <span class="keybinding__label">Cmd+Z</span></li>
-        </ul>
-        <ul class="keybinding__detail">
-          <h3 class="keybinding__title">Markdown Keybindings</h3>
-          <li><span class="keybinding__label">Ctrl+A</span> Insert Link Markdown</li>
-          <li><span class="keybinding__label">Ctrl+I</span> Insert Image Markdown</li>
-          <li><span class="keybinding__label">Ctrl+V</span> Insert YouTube Video</li>
-          <li><span class="keybinding__label">Ctrl+T</span> Insert Table</li>
-        </ul>
+
+      <div class="samples">
+          <h2>Sample Usage</h2>
+          <hr>
+          <h4 class="sample__title">You Current Browser</h4>
+          <div class="sample__box">
+            <div class="sample__slide">
+              <pre><code>//your code
+const joo = require('joo');
+console.log(joo.get());</code></pre>
+            </div>
+            <div class="sample__slide">
+          <pre><code>//result
+{
+   "bot": false,
+   "mobile": false,
+   "name": "chrome",
+   "version": "68.0.3440",
+   "versionNumber": 68.0344,
+   "os": "Windows 10"
+}</code></pre>
+            </div>
+          </div>
+          
+          <h4 class="sample__title">Check Browser</h4>
+          <div class="sample__box">
+            <div class="sample__slide">
+              <pre><code>//your code
+joo.is([
+  ' chrome  >  70.0.3440 ',
+  ' firefox > 32 '
+  ], function(is_browser) {
+  console.log(
+    is_browser
+    ? 'browser is valid' 
+    : 'browser is not valid'
+  );
+});</code></pre>
+            </div>
+            <div class="sample__slide">
+              <pre><code>//result
+browser is valid</code></pre>
+            </div>
+          </div>
+
+          <h4 class="sample__title">Watch Browser Error</h4>
+          <div class="sample__box">
+            <div class="sample__slide">
+              <pre><code>//your code
+joo.error(function(error) {
+  console.log(error);
+});</code></pre>
+            </div>
+            <div class="sample__slide">
+              <pre><code>//result
+{
+  browser: {
+    bot : false
+    mobile : false
+    name : "chrome"
+    os : "Windows 10"
+    version : "68.0.3440"
+    versionNumber : 68.0344
+  },
+  column : 2
+  errorobject : "{}"
+  line: 44
+  message: "Uncaught Error: Required"
+  url: "http://path-to-web"
+}</code></pre>
+            </div>
+          </div>
+
       </div>
       <div class="callout">
         <p>Read our documentation for advanced keybindings and customization</p>
@@ -99,40 +180,12 @@
         <h3 class="section__title">Changelog</h3>
         <div class="changelog__item">
           <div class="changelog__meta">
-            <h4 class="changelog__title">v0.7</h4>
-            <small class="changelog__date">10/12/2017</small>
+            <h4 class="changelog__title">v0.0.1</h4>
+            <small class="changelog__date">09/03/2018</small>
           </div>
           <div class="changelog__detail">
             <ul>
-              <li>Improving the writing workflow with better key bindings</li>
-              <li>Design updates</li>
-              <li>SSL Verification for web hooks</li>
-              <li>Render Emoji</li>
-            </ul>
-          </div>
-        </div>
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <h4 class="changelog__title">v0.6</h4>
-            <small class="changelog__date">7/30/2017</small>
-          </div>
-          <div class="changelog__detail">
-            <ul>
-              <li>Adding Unicode support</li>
-              <li>Basic text highlighting</li>
-              <li>Fresh Design</li>
-            </ul>
-          </div>
-        </div>
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <h4 class="changelog__title">v0.5</h4>
-            <small class="changelog__date">5/10/2017</small>
-          </div>
-          <div class="changelog__detail">
-            <ul>
-              <li>Save default md file in new folders</li>
-              <li>Ability to quick search on existing notes</li>
+              <li>Created library</li>
             </ul>
           </div>
         </div>
@@ -141,7 +194,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer">Scribbler is a free HTML template created exclusively for <a href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.</footer>
+    <footer class="footer">this template created exclusively for <a rel="nofollow" href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="scribbler.js"></script>

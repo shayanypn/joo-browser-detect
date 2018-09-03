@@ -12,7 +12,6 @@ function itMethodGet(title, agentString, expectedResult) {
 }
 function itMethodIs(title, agentString, condition) {
   it( title , () => {
-
     Joo.init(agentString).is(condition, function(result){
       expect(result).to.to.equal(true);
     })
@@ -50,4 +49,17 @@ describe('Check is method', () => {
     ['firefox > 48']
   );
 });
+
+// describe('Check is error', () => {
+//   it( 'if error happend' , () => {
+//     Joo.error(function(){
+//       expect(true).to.to.equal(true);
+//     })
+//     try {
+//       throw new Error('Required');
+//     }catch (e){
+      
+//     }
+//   });
+// });
 

@@ -10,8 +10,8 @@ This is a package that attempts to be a tool for helping people detecting browse
 const joo = require('joo');
 console.log(joo.get());
 ```
-out put will be 
 
+	// joo.get() 
     {
        "bot": false,
        "mobile": false,
@@ -20,6 +20,28 @@ out put will be
        "versionNumber": 68.0344,
        "os": "Windows 10"
     }
+    
+	//joo.is
+    joo.is([
+    	'chrome  >  70.0.3440',
+    	], is => {
+    	console.log( is ? 'Valid' : 'No Valid');
+    });
+
+    //joo.error(
+    joo.error(function(error) {
+		console.log(error);
+	});
+	    
+    //joo.isOrError(
+    joo.isOrError([
+		' chrome  >  70.0.3440 ',
+		' chrome == 60.0.0000 '
+		], (is, error) => {
+			console.log(is, error);
+	});
+    
+    
 
 ## Detect Object
 | name | type | description | example |
@@ -32,17 +54,21 @@ out put will be
 | os | string | os type name | Windows NT 10.0 |
 
 
+## DetectRules
+
+    firefox > 50.0
+    chrome > 49.00123
+    ie not
+
 
 ## Method
 | name | entry | description | output |
 | ---- | ---- | ----------- | ------- |
-| init | string |  |  |
-| get |  | return current browser detect object |  |
-| version | string | browser or node version |  |
-| versionNumber |  |  |  |
-| mobile |  |  |  |
-| bot|  |  |  |
-| os |  |  |  |
+| init | String | Initial the library with user agency string | this |
+| get |  | Return current browser detect object | DetectObject |
+| is| DetectRules | Browser or node version | True/False |
+| error | Callback | In any error happens during on the page, this method call the callback |  |
+| isOrError | DetectRules, Callback |  |  |
 
 ## LICENSE
 

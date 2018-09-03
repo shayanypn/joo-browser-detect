@@ -1,5 +1,9 @@
 'use stric';
 
+function isArray(obj) {
+  return (obj instanceof Array);
+}
+
 /**
  * create a filter array function
  * @param  {Array}      Array which you want to make filter on it
@@ -74,6 +78,7 @@ function ruleMapper(rule) {
 }
 
 module.exports = {
+  isArray: isArray,
   filter: filter,
   versionNumber: versionNumber,
   buildRules: buildRules,

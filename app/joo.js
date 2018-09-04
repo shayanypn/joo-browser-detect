@@ -53,8 +53,7 @@ function JOO() {
 		},
 
 		error: function (callback) {
-
-			if (typeof window !== undefined) {
+			if (typeof window !== 'undefined') {
 				window.onerror = function (msg, url, lineNo, columnNo, error) {
 					const errorInfo = {
 						message: msg,

@@ -11,22 +11,16 @@ var getAll = function (selector, scope) {
 
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
+
+  var browserInfo = JSON.stringify(joo.get(), null, 4);
+
   var i = 0;
-  var txt = `// how joo work
-            const joo = require('joo');
-            joo.get();
-            {
-               "bot": false,
-               "mobile": false,
-               "name": "chrome",
-               "version": "68.0.3440",
-               "versionNumber": 68.0344,
-               "os": "Windows 10"
-            }
-            // or
-            joo.is('chrome > 70.0',is=>console.log(is?'valid':'not valid'););
-            `;
-  var speed = 60;
+  var txt = '// how joo work \n \
+            const joo = require(\'joo\');\n \
+            joo.get();\n \
+            '+browserInfo+'\
+            ';
+  var speed = 40;
 
   function typeItOut () {
     if (i < txt.length) {

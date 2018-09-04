@@ -21,10 +21,10 @@
     "chai": "3.5.0",
     "eslint": "3.19.0",
     "eslint-loader": "1.7.1",
+    "gh-pages": "^1.2.0",
     "mocha": "3.3.0",
     "webpack": "3.1.0",
-    "yargs": "7.1.0",
-    "gh-pages": "^1.2.0"
+    "yargs": "7.1.0"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/shayanypn/joo-browser-detect/issues"
   },
-  "homepage": "https://github.com/shayanypn/joo-browser-detect"
+  "homepage": "https://github.com/shayanypn/joo-browser-detect",
+  "dependencies": {
+    "false": "^0.0.4"
+  }
 }

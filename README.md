@@ -1,7 +1,10 @@
 
 
+
 # Joo (browser detect)
 This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens
+
+To see demo, example and document please check [Demo & Document](https://shayanypn.github.io/joo-browser-detect/)
 
 
 ## Example Usage
@@ -11,7 +14,7 @@ const joo = require('joo');
 console.log(joo.get());
 ```
 
-	// joo.get() 
+  // joo.get() 
     {
        "bot": false,
        "mobile": false,
@@ -21,25 +24,25 @@ console.log(joo.get());
        "os": "Windows 10"
     }
     
-	//joo.is
+  //joo.is
     joo.is([
-    	'chrome  >  70.0.3440',
-    	], is => {
-    	console.log( is ? 'Valid' : 'No Valid');
+      'chrome  >  70.0.3440',
+      ], is => {
+      console.log( is ? 'Valid' : 'No Valid');
     });
 
     //joo.error(
     joo.error(function(error) {
-		console.log(error);
-	});
-	    
+    console.log(error);
+  });
+      
     //joo.isOrError(
     joo.isOrError([
-		' chrome  >  70.0.3440 ',
-		' chrome == 60.0.0000 '
-		], (is, error) => {
-			console.log(is, error);
-	});
+    ' chrome  >  70.0.3440 ',
+    ' chrome == 60.0.0000 '
+    ], (is, error) => {
+      console.log(is, error);
+  });
     
     
 
@@ -93,5 +96,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-

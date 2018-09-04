@@ -14,35 +14,37 @@ const joo = require('joo');
 console.log(joo.get());
 ```
 
-  // joo.get() 
-    {
-       "bot": false,
-       "mobile": false,
-       "name": "chrome",
-       "version": "68.0.3440",
-       "versionNumber": 68.0344,
-       "os": "Windows 10"
-    }
+      // joo.get() 
+      {
+         "bot": false,
+         "mobile": false,
+         "name": "chrome",
+         "version": "68.0.3440",
+         "versionNumber": 68.0344,
+         "os": "Windows 10"
+      }
+        
+      //joo.is
+      joo.is([
+          'chrome  >  70.0.3440',
+          ], is => {
+          console.log( is ? 'Valid' : 'No Valid');
+      });
     
-  //joo.is
-    joo.is([
-      'chrome  >  70.0.3440',
-      ], is => {
-      console.log( is ? 'Valid' : 'No Valid');
-    });
+      //joo.error
+      joo.error(function(error) {
+        console.log(error);
+      });
+  
 
-    //joo.error(
-    joo.error(function(error) {
-    console.log(error);
-  });
-      
-    //joo.isOrError(
-    joo.isOrError([
-    ' chrome  >  70.0.3440 ',
-    ' chrome == 60.0.0000 '
-    ], (is, error) => {
-      console.log(is, error);
-  });
+        
+      //joo.isOrError
+      joo.isOrError([
+          ' chrome  >  70.0.3440 ',
+          ' chrome == 60.0.0000 '
+        ], (is, error) => {
+          console.log(is, error);
+      });
     
     
 
@@ -96,3 +98,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

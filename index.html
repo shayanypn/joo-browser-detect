@@ -182,19 +182,19 @@ joo.error(function(error) {
         throw new Error('Required');
       }, 1000);
      
-      // var request = new XMLHttpRequest();
-      // request.onreadystatechange= function () {
-      //     if (request.readyState==4) {
-      //       if(request.status === 202){
-      //         console.log('your browser recorded');
-      //       }
-      //     }
-      // }
-      // request.open('POST', 'https://api.thinghub.io/v0/thing/1a3be12b-2608-4478-93bf-70f5f1e4d71d/data', true);
-      // request.setRequestHeader('content-type', 'application/json');
-      // request.setRequestHeader('Authorization','138d6d0d-77ef-4be1-ae9b-efe740f333c7');
-      // request.setRequestHeader('cache-control','no-cache');
-      // request.send(JSON.stringify({content: joo.get()}));
+      var request = new XMLHttpRequest();
+      request.onreadystatechange= function () {
+          if (request.readyState==4) {
+            if(request.status === 202){
+              console.log('your browser recorded');
+            }
+          }
+      }
+      request.open('POST', 'https://api.thinghub.io/v0/thing/1a3be12b-2608-4478-93bf-70f5f1e4d71d/data', true);
+      request.setRequestHeader('content-type', 'application/json');
+      request.setRequestHeader('Authorization','138d6d0d-77ef-4be1-ae9b-efe740f333c7');
+      request.setRequestHeader('cache-control','no-cache');
+      request.send(JSON.stringify({content: joo.get()}));
 
 
     </script>

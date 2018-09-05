@@ -99,7 +99,7 @@ hr {
 
 .code--block {
   white-space: pre-line;
-  padding: 0 1.5rem;
+  padding: 1rem;
 }
 
 .code--inline {

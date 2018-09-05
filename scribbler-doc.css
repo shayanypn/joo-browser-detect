@@ -117,3 +117,6 @@ html, body {
   margin: 0 0 1em 0 !important;
   white-space: pre !important;
 }
+.code__block pre{
+  padding: 20px;
+}

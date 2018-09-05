@@ -33,28 +33,17 @@
       <article class="doc__content">
         <section class="js-section">
           <h3 class="section__title">Get Started</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, magni, eaque. Veniam, tempora qui, nihil magnam cupiditate cum veritatis non repellendus, doloremque aut ullam magni! Aliquam consectetur, non temporibus mollitia!</p>
           <h3 class="section__title">Installation</h3>
           <div class="code__block code__block--notabs">
             <strong>Npm</strong>
-            <pre class="code code--block">
-              <code>
-                npm install joo-browser-detect --save
-              </code>
-            </pre>
+            <pre class="code code--block"><code>npm install joo-browser-detect --save</code></pre>
           
             <strong>External</strong>
-            <pre class="code code--block">
-              <code>
-                 &lt;script src="node_modules/joo-browser-detect/dist/joo-browser-detect.umd.js"&gt;&lt;/script&gt;
-              </code>
-            </pre>
-
+            <pre class="code code--block"><code>&lt;script src="node_modules/joo-browser-detect/dist/joo-browser-detect.umd.js"&gt;&lt;/script&gt;</code></pre>
           </div>
         </section>
         <section class="js-section">
           <h3 class="section__title">Property</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste repellat accusamus minima rerum quasi atque, quod iure sint vel laboriosam officiis, aliquid saepe dicta qui id veniam quidem eos, molestiae.</p>
           <strong>DetectObject</strong>
           <table id="detect-bbject">
             <tr>
@@ -137,7 +126,6 @@
         </section>
         <section class="js-section">
           <h3 class="section__title">Methods</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio reiciendis, officiis quae. Magni officia, eius dolorem veritatis eum non nulla, atque animi sit amet, error incidunt, rerum ullam enim! Soluta.</p>
           <table id="customers">
             <tr>
               <th>Options</th>
@@ -149,43 +137,43 @@
               <td>name</td>
               <td> -- </td>
               <td>string</td>
-              <td></td>
+              <td>name of library</td>
             </tr>
             <tr>
               <td>version</td>
               <td> -- </td>
               <td>string</td>
-              <td></td>
+              <td>version of a Joo library</td>
             </tr>
             <tr>
               <td>init</td>
               <td> string </td>
               <td> this</td>
-              <td></td>
+              <td>initialing the UserAgent</td>
             </tr>
             <tr>
               <td>get</td>
               <td> -- </td>
               <td>DetectObject</td>
-              <td></td>
+              <td>get browser detail</td>
             </tr>
             <tr>
               <td>is</td>
               <td>String|Array, Function</td>
               <td>--</td>
-              <td></td>
+              <td>check browser detail(name and version)</td>
             </tr>
             <tr>
               <td>error</td>
               <td>Function</td>
               <td>--</td>
-              <td></td>
+              <td>watch for any error on javascript</td>
             </tr>
             <tr>
               <td>isOrError</td>
               <td>String|Array, Function</td>
               <td>--</td>
-              <td></td>
+              <td>check browser detail and watch for any error on javascript</td>
             </tr>
           </table>
 
@@ -193,42 +181,42 @@
           <p>Get browser information</p>
           <pre class="code code--block">
             <code>
-              const Joo = require('joo');
-              console.log(Joo.get());
+const Joo = require('joo');
+console.log(Joo.get());
 
-              //output
-              {
-                   "bot": false,
-                   "mobile": false,
-                   "name": "chrome",
-                   "version": "68.0.3440",
-                   "versionNumber": 68.0344,
-                   "os": "Windows 10"
-              }
+//output
+{
+     "bot": false,
+     "mobile": false,
+     "name": "chrome",
+     "version": "68.0.3440",
+     "versionNumber": 68.0344,
+     "os": "Windows 10"
+}
             </code>
           </pre>
           
           <p>Check browser </p>
           <pre class="code code--block">
             <code>
-              const Joo = require('joo');
-              Joo.is([
-                'chrome > 70.0.3440',
-                'firefox > 32',
-                'ie > 10'
-                ], is => {
-                  console.log( is ? 'Valid' : 'No Valid');
-              });
+const Joo = require('joo');
+Joo.is([
+  'chrome > 70.0.3440',
+  'firefox > 32',
+  'ie > 10'
+  ], is => {
+    console.log( is ? 'Valid' : 'No Valid');
+});
             </code>
           </pre>
 
           <p>Watch When any error happend</p>
           <pre class="code code--block">
             <code>
-              const Joo = require('joo');
-              Joo.error( error => {
-                console.log(error);
-              });
+const Joo = require('joo');
+Joo.error( error => {
+  console.log(error);
+});
             </code>
           </pre>
 
@@ -236,7 +224,6 @@
         </section>
         <section class="js-section">
           <h3 class="section__title">Issues</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere iusto atque, reprehenderit dolorem accusantium qui! Laborum ipsa ut molestiae, doloremque tempora reprehenderit voluptates? Quaerat eos iusto id, facilis possimus sit.</p>
         </section>
       </article>
     </div>

@@ -1,7 +1,15 @@
 
-
-
 # Joo (browser detect)
+
+[![npm version](https://img.shields.io/npm/v/joo-browser-detect.svg?style=flat-square)](https://www.npmjs.org/package/joo-browser-detect)
+
+[![Build Status](https://travis-ci.com/shayanypn/joo-browser-detect.svg?branch=master)](https://travis-ci.com/shayanypn/joo-browser-detect)
+
+[![install size](https://packagephobia.now.sh/badge?p=joo-browser-detect)](https://packagephobia.now.sh/result?p=joo-browser-detect)
+
+[![npm downloads](https://img.shields.io/npm/dm/joo-browser-detect.svg?style=flat-square)](http://npm-stat.com/charts.html?package=joo-browser-detect)
+
+
 This is a package that attempts to be a tool for helping people detecting browser, check for support/valid browser and fire when a browser error happens
 
 To see demo, example and document please check [Demo & Document](https://shayanypn.github.io/joo-browser-detect/)
@@ -10,7 +18,7 @@ To see demo, example and document please check [Demo & Document](https://shayany
 ## Example Usage
 
 ```js
-const joo = require('joo');
+const joo = require('joo-browser-detect');
 console.log(joo.get());
 ```
 

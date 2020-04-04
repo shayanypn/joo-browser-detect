@@ -16,7 +16,7 @@ if (document.getElementsByClassName('demo').length > 0) {
 
   var i = 0;
   var txt = '// how joo work \n \
-            const joo = require(\'joo\');\n \
+            const joo = require(\'joo-browser-detect\');\n \
             joo.get();\n \
             '+browserInfo+'\
             ';

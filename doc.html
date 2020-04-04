@@ -181,7 +181,7 @@
           <p>Get browser information</p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo');
+const Joo = require('joo-browser-detect');
 console.log(Joo.get());
 
 //output
@@ -199,7 +199,7 @@ console.log(Joo.get());
           <p>Check browser </p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo');
+const Joo = require('joo-browser-detect');
 Joo.is([
   'chrome > 70.0.3440',
   'firefox > 32',
@@ -213,7 +213,7 @@ Joo.is([
           <p>Watch When any error happend</p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo');
+const Joo = require('joo-browser-detect');
 Joo.error( error => {
   console.log(error);
 });

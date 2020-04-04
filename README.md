@@ -1,4 +1,5 @@
 
+
 # Joo (browser detect)
 
 [![npm version](https://img.shields.io/npm/v/joo-browser-detect.svg?style=flat-square)](https://www.npmjs.org/package/joo-browser-detect)
@@ -14,11 +15,33 @@ This is a package that attempts to be a tool for helping people detecting browse
 
 To see demo, example and document please check [Demo & Document](https://shayanypn.github.io/joo-browser-detect/)
 
+## Using npm:
+
+```bash
+$ npm install joo-browser-detect
+```
+
+
+Using yarn:
+
+```bash
+$ yarn add joo-browser-detect
+```
+
+Using Html:
+
+```html
+<script src="node_modules/joo-browser-detect/dist/joo-browser-detect.umd.js"/>
+```
+
 
 ## Example Usage
 
 ```js
 const joo = require('joo-browser-detect');
+// or
+import joo from 'joo-browser-detect';
+
 console.log(joo.get());
 ```
 

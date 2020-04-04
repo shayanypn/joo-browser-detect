@@ -10,7 +10,6 @@ cache:
 script:
   - npm test
   - npm run build
-  - npm run deploy
 
 deploy:
   provider: pages
@@ -19,5 +18,5 @@ deploy:
   keep-history: true
   on:
     branch: master
-  local-dir: dist
+  local-dir: deploy
   verbose: true

@@ -1,6 +1,6 @@
 /* global describe, it, before */
 import chai from 'chai';
-import joo from '../dist/joo.min.js';
+import joo from '../app/joo.js';
 
 chai.expect();
 const expect = chai.expect;

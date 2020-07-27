@@ -39,7 +39,7 @@
             <pre class="code code--block"><code>npm install joo-browser-detect --save</code></pre>
           
             <strong>External</strong>
-            <pre class="code code--block"><code>&lt;script src="node_modules/joo-browser-detect/dist/joo-browser-detect.umd.js"&gt;&lt;/script&gt;</code></pre>
+            <pre class="code code--block"><code>&lt;script type="text/javascript" src="./node_modules/joo-browser-detect/dist/joo.min.js"&gt;&lt;/script&gt;</code></pre>
           </div>
         </section>
         <section class="js-section">
@@ -181,8 +181,8 @@
           <p>Get browser information</p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo-browser-detect');
-console.log(Joo.get());
+const joo = require('joo-browser-detect');
+console.log(joo.get());
 
 //output
 {
@@ -199,8 +199,8 @@ console.log(Joo.get());
           <p>Check browser </p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo-browser-detect');
-Joo.is([
+const joo = require('joo-browser-detect');
+joo.is([
   'chrome > 70.0.3440',
   'firefox > 32',
   'ie > 10'
@@ -213,8 +213,8 @@ Joo.is([
           <p>Watch When any error happend</p>
           <pre class="code code--block">
             <code>
-const Joo = require('joo-browser-detect');
-Joo.error( error => {
+const joo = require('joo-browser-detect');
+joo.error( error => {
   console.log(error);
 });
             </code>

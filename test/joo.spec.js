@@ -13,7 +13,7 @@ describe('Given an instance of joo library', () => {
     });
 
     it('should return the version', () => {
-      expect(joo.version).to.be.equal('0.0.1');
+      expect(joo.version).to.be.equal('0.0.3');
     });
   });
 });

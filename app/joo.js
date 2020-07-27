@@ -8,7 +8,7 @@ function JOO() {
 
 		name: 'joo',
 
-		version: '0.0.1',
+		version: '0.0.3',
 
 		init: function (userAgentString) {
 

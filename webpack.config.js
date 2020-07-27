@@ -1,24 +1,20 @@
 /* global __dirname, require, module*/
-
-const webpack = require('webpack'),
-UglifyJsPlugin = webpack.optimize.UglifyJsPlugin,
-path = require('path'),
-env = require('yargs').argv.env, // use --env with webpack 2
-libraryName = 'joo';
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
+const libraryName = 'joo';
+const isProduction = process.env.NODE_ENV === 'production';
 
 let plugins = [],
   outputFile;
 
-if (env === 'build') {
-	plugins.push(new UglifyJsPlugin({ minimize: true }));
-}
-
 const config = {
 	entry: __dirname + '/app/joo.js',
 	devtool: 'source-map',
+	mode: isProduction ? 'production' : 'development',
 	output: {
 		path: __dirname + '/dist',
-		filename: (env === 'build') ? (libraryName + '.min.js') : (libraryName + '.js'),
+		filename: isProduction ? (libraryName + '.min.js') : (libraryName + '.js'),
 		library: libraryName,
 		libraryTarget: 'umd',
 		umdNamedDefine: true
@@ -42,5 +38,12 @@ const config = {
 	},
 	plugins: plugins
 };
+
+if (isProduction) {
+	config.optimization = {
+		minimizer: [new UglifyJsPlugin()],
+	};
+}
+
 
 module.exports = config;

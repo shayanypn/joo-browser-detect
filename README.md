@@ -1,6 +1,3 @@
-
-
-
 # Joo (browser detect)
 
 [![npm version](https://img.shields.io/npm/v/joo-browser-detect.svg?style=flat-square)](https://www.npmjs.org/package/joo-browser-detect) [![Build Status](https://travis-ci.com/shayanypn/joo-browser-detect.svg?branch=master)](https://travis-ci.com/shayanypn/joo-browser-detect)[![install size](https://packagephobia.now.sh/badge?p=joo-browser-detect)](https://packagephobia.now.sh/result?p=joo-browser-detect)[![npm downloads](https://img.shields.io/npm/dm/joo-browser-detect.svg?style=flat-square)](http://npm-stat.com/charts.html?package=joo-browser-detect)
@@ -41,38 +38,38 @@ import joo from 'joo-browser-detect';
 console.log(joo.get());
 ```
 
-      // joo.get() 
-      {
-         "bot": false,
-         "mobile": false,
-         "name": "chrome",
-         "version": "68.0.3440",
-         "versionNumber": 68.0344,
-         "os": "Windows 10"
-      }
-        
-      //joo.is
-      joo.is([
-          'chrome  >  70.0.3440',
-          ], is => {
-          console.log( is ? 'Valid' : 'No Valid');
-      });
-    
-      //joo.error
-      joo.error(function(error) {
-        console.log(error);
-      });
-  
+```js
 
-        
-      //joo.isOrError
-      joo.isOrError([
-          ' chrome  >  70.0.3440 ',
-          ' chrome == 60.0.0000 '
-        ], (is, error) => {
-          console.log(is, error);
-      });
-    
+   // joo.get() 
+   {
+      "bot": false,
+      "mobile": false,
+      "name": "chrome",
+      "version": "68.0.3440",
+      "versionNumber": 68.0344,
+      "os": "Windows 10"
+   }
+     
+   //joo.is
+   joo.is([
+       'chrome  >  70.0.3440',
+       ], is => {
+       console.log( is ? 'Valid' : 'No Valid');
+   });
+ 
+   //joo.error
+   joo.error(function(error) {
+     console.log(error);
+   });
+
+   //joo.isOrError
+   joo.isOrError([
+       ' chrome  >  70.0.3440 ',
+       ' chrome == 60.0.0000 '
+     ], (is, error) => {
+       console.log(is, error);
+   });
+```
     
 
 ## Detect Object
@@ -125,4 +122,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
